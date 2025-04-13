@@ -1,4 +1,3 @@
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -15,16 +14,23 @@ import java.io.ObjectOutputStream;
 import java.util.*;
 import javax.swing.*;
 
+
+
+
 public class App {
+    private static App instance;
     public static JTextField width;
     public static JTextField height;
     public static int roomtype;
     public static trash bin;
     CanvasPanel canvas;
     ControlPanel control;
+    private boolean savestatus;
+    
 
     @SuppressWarnings("unused")
     public App() {
+        instance = this;
         JFrame frame = new JFrame();
         frame.setBackground(Color.BLACK);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -182,7 +188,8 @@ public class App {
             }
         });
         New.addActionListener(e -> {
-            control.remove(Roommenu);
+            if(savestatus||CanvasPanel.RoomsList.isEmpty()){
+                control.remove(Roommenu);
             control.remove(Furnmenu);
             addfurniture.setBounds(0, addroom.getY() + addroom.getHeight(), addroom.getWidth(), addroom.getHeight());
             control.repaint();
@@ -193,6 +200,9 @@ public class App {
             CanvasPanel.RoomsList.clear();
             canvas.repaint();
             Room.selection11 = false;
+            } else {
+                canvas.showWarningDialog("You left some Unsaved Progress", 300);
+            }
         });
         Snap.addActionListener(e -> {
             snapmenu.show(Snap, 0, Snap.getHeight());
@@ -210,6 +220,7 @@ public class App {
                 File file = fileChooser.getSelectedFile();
                 saveAppState(file); // Save the state to the selected file
             }
+            savestatus = true;
         });
 
         Load.addActionListener(e -> {
@@ -434,6 +445,19 @@ public class App {
             e.printStackTrace();
         }
     }
+
+    public static App getInstance(){
+        return instance;
+    }
+
+    public boolean getsavestatus(){
+        return savestatus;
+    }
+
+    public void setsavestatus(boolean newone){
+        savestatus = newone;
+    }
+
 
     public static void main(String[] args) {
         @SuppressWarnings("unused")

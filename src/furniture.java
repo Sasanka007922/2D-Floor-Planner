@@ -31,6 +31,7 @@ public class furniture extends JLabel implements KeyListener{
             @Override
             public void mouseClicked(MouseEvent e) {
                 requestFocusInWindow();
+                App.getInstance().setsavestatus(false);
             }
             public void mouseReleased(MouseEvent e) {
                 if (!furnValid(furniture.this)) {
@@ -41,6 +42,7 @@ public class furniture extends JLabel implements KeyListener{
                 }
                 revalidate();
                 repaint(); // Keep the selection color on repaint
+                App.getInstance().setsavestatus(false);
             }
         });
         this.addMouseMotionListener(new MouseMotionAdapter() {
@@ -61,8 +63,10 @@ public class furniture extends JLabel implements KeyListener{
                     setLocation(clampedX, clampedY);
                     room.repaint();
                 }
+                App.getInstance().setsavestatus(false);
             }
         });
+        App.getInstance().setsavestatus(false);
         
     }
 
@@ -119,6 +123,7 @@ public class furniture extends JLabel implements KeyListener{
             case KeyEvent.VK_RIGHT -> rotation += 90; // Rotate clockwise
             case KeyEvent.VK_LEFT -> rotation -= 90;  // Rotate counterclockwise
         }
+        App.getInstance().setsavestatus(false);
         repaint(); // Repaint to apply rotation
     }
 

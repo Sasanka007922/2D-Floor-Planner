@@ -74,6 +74,7 @@ public class CanvasPanel extends JPanel {
             case 4 -> room.roomtype_str = "Bathroom";
               
         }
+        
     }
     
 

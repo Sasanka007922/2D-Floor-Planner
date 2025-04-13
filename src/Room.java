@@ -63,6 +63,7 @@ public class Room extends CanvasPanel{
                 isDragging = true; // Set dragging state
                 toFront(); // Bring this room to the front
                 repaint();
+                App.getInstance().setsavestatus(false);
             }
 
             public void mouseReleased(MouseEvent e) {
@@ -111,7 +112,7 @@ public class Room extends CanvasPanel{
                     App.bin.setVisible(false);
                     App.bin.getParent().repaint();
                 }
-
+                App.getInstance().setsavestatus(false);
             }
         });
 
@@ -137,8 +138,11 @@ public class Room extends CanvasPanel{
                 select();
                 deselectAllRooms();
                 selection11 = selection;
+                App.getInstance().setsavestatus(false);
             }
         });
+
+        App.getInstance().setsavestatus(false);
         
 
     }
@@ -269,11 +273,13 @@ public class Room extends CanvasPanel{
         selection = true;
 
         repaint(); // Ensure the room is repainted when selected
+        App.getInstance().setsavestatus(false);
     }
 
     private void deselect() {
         selection = false;
         repaint(); // Ensure the room is repainted when deselected
+        App.getInstance().setsavestatus(false);
     }
 
     private void deselectAllRooms() {
