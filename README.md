@@ -60,7 +60,7 @@ The **2D Floor Planner** is a Java Swing-based desktop app for creating simple 2
 - Snap to grid for neat layout.
 - **Trash area** at top-right corner.
 
-![UI](https://drive.google.com/file/d/1unm_-9QBQw4hKpT31V5XWrffuogYfKOE/view?usp=sharing)
+![UI]![alt text](image.png)
 
 ---
 
