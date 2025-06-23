@@ -74,15 +74,15 @@ public class furniture extends JLabel implements KeyListener{
         // Load images based on furniture type, replacing paths with your file locations
         ImageIcon icon = switch (furntype) {
             case 0 -> new ImageIcon("lib\\bed.png");
-            case 1 -> new ImageIcon("C:\\Users\\Sasanka Allamaraju\\Desktop\\PROJECT NEW\\Floor Planner again\\lib\\commode.png");
-            case 2 -> new ImageIcon("C:\\Users\\Sasanka Allamaraju\\Desktop\\PROJECT NEW\\Floor Planner again\\lib\\chair.png");
-            case 3 -> new ImageIcon("C:\\Users\\Sasanka Allamaraju\\Desktop\\PROJECT NEW\\Floor Planner again\\lib\\sink.png");
-            case 4 -> new ImageIcon("C:\\Users\\Sasanka Allamaraju\\Desktop\\PROJECT NEW\\Floor Planner again\\lib\\table.png");
-            case 5 -> new ImageIcon("C:\\Users\\Sasanka Allamaraju\\Desktop\\PROJECT NEW\\Floor Planner again\\lib\\shower.png");
-            case 6 -> new ImageIcon("C:\\Users\\Sasanka Allamaraju\\Desktop\\PROJECT NEW\\Floor Planner again\\lib\\sofa.png");
-            case 7 -> new ImageIcon("C:\\Users\\Sasanka Allamaraju\\Desktop\\PROJECT NEW\\Floor Planner again\\lib\\sink.png");
-            case 8 -> new ImageIcon("C:\\Users\\Sasanka Allamaraju\\Desktop\\PROJECT NEW\\Floor Planner again\\lib\\Diningset.png");
-            case 9 -> new ImageIcon("C:\\Users\\Sasanka Allamaraju\\Desktop\\PROJECT NEW\\Floor Planner again\\lib\\stove.png");
+            case 1 -> new ImageIcon("lib\\commode.png");
+            case 2 -> new ImageIcon("lib\\chair.png");
+            case 3 -> new ImageIcon("lib\\sink.png");
+            case 4 -> new ImageIcon("lib\\table.png");
+            case 5 -> new ImageIcon("lib\\shower.png");
+            case 6 -> new ImageIcon("lib\\sofa.png");
+            case 7 -> new ImageIcon("lib\\sink.png");
+            case 8 -> new ImageIcon("lib\\Diningset.png");
+            case 9 -> new ImageIcon("lib\\stove.png");
             default -> null;
         };
         if (icon != null) {
